@@ -1,5 +1,14 @@
 export default {
   COLORS: {
+    PRIMARY_100: '#FEF7D5',
+    PRIMARY_200: '#FEEDAD',
+    PRIMARY_300: '#FEE083',
+    PRIMARY_400: '#FED365',
+    PRIMARY_500: '#FEBF32',
+    PRIMARY_600: '#DA9C24',
+    PRIMARY_700: '#B67C19',
+    PRIMARY_800: '#935E0F',
+
     BLUE_100: '#E2F0FF',
     BLUE_200: '#C5DFFF',
     BLUE_300: '#A9CDFF',

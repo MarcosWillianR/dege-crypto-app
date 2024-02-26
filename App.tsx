@@ -1,41 +1,42 @@
-import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
-import { useFonts } from 'expo-font';
-import { ThemeProvider } from 'styled-components/native';
-import * as SplashScreen from 'expo-splash-screen';
+import React from 'react'
+import { StatusBar } from 'expo-status-bar'
+import { useFonts } from 'expo-font'
+import { ThemeProvider } from 'styled-components/native'
+import * as SplashScreen from 'expo-splash-screen'
 
-SplashScreen.preventAutoHideAsync();
+import theme from './src/theme'
 
-import theme from './src/theme';
+import Onboarding from './src/features/onboarding'
 
-import Onboarding from './src/features/onboarding';
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
+SplashScreen.preventAutoHideAsync()
 
 export default function App() {
-  const [fontsLoaded, fontError] = useFonts({
+  const [fontsLoaded] = useFonts({
     'Poppins-Bold': require('./assets/fonts/Poppins-Bold.ttf'),
     'Poppins-Regular': require('./assets/fonts/Poppins-Regular.ttf'),
-    'Poppins-SemiBold': require('./assets/fonts/Poppins-SemiBold.ttf'),
-  });
+    'Poppins-SemiBold': require('./assets/fonts/Poppins-SemiBold.ttf')
+  })
 
-  const onLayoutRootView = React.useCallback(async () => {
-    if (fontsLoaded || fontError) {
-      await SplashScreen.hideAsync();
+  React.useEffect(() => {
+    async function hideSplashScreen() {
+      await SplashScreen.hideAsync()
     }
-  }, [fontsLoaded, fontError]);
 
-  if (!fontsLoaded && !fontError) {
-    return null;
+    if (fontsLoaded) {
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
+      hideSplashScreen()
+    }
+  }, [fontsLoaded])
+
+  if (!fontsLoaded) {
+    return null
   }
 
   return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
-      <ThemeProvider theme={theme}>
-        <Onboarding />
-        <StatusBar style="auto" />
-      </ThemeProvider>
-    </View>
-  );
+    <ThemeProvider theme={theme}>
+      <Onboarding />
+      <StatusBar style="light" />
+    </ThemeProvider>
+  )
 }
-
-const styles = StyleSheet.create({ container: { flex: 1, backgroundColor: '#17171A' } });
