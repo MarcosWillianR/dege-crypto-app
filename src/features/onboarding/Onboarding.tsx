@@ -1,12 +1,13 @@
 import { type FC } from 'react'
-import { Text } from 'react-native'
+
+import { TextGradient } from '@components/TextGradient'
 
 import { Container } from './styles'
 
 const Onboarding: FC = () => {
   return (
     <Container>
-      <Text>Hello</Text>
+      <TextGradient size="XXXL">Property Diversity</TextGradient>
     </Container>
   )
 }

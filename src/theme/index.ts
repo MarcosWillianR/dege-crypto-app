@@ -53,12 +53,12 @@ export default {
     GRAY_500: '#DBDDE6',
     GRAY_600: '#CFD1DD',
     GRAY_700: '#C3C6D5',
-    GRAY_800: '#B7BBCC', 
+    GRAY_800: '#B7BBCC',
     GRAY_900: '#ABAFC4',
     GRAY_110: '#A0A4BB',
     GRAY_120: '#9498B3',
     GRAY_130: '#888DAA',
-    GRAY_140: '#7C81A2', 
+    GRAY_140: '#7C81A2',
     GRAY_150: '#707699',
     GRAY_160: '#666C8F',
     GRAY_170: '#5D6383',
@@ -70,7 +70,7 @@ export default {
     GRAY_240: '#2A2D3C',
     GRAY_250: '#222531',
     GRAY_260: '#17171A',
-    BLACK: '#000000',
+    BLACK: '#000000'
   },
 
   FONT_FAMILY: {
@@ -86,8 +86,9 @@ export default {
     LG: 20,
     XL: 24,
     XXL: 34,
-    XXXL: 48,
-    XXXXL: 60,
-    XXXXXL: 96
+    XXXL: 40,
+    XXXXL: 48,
+    XXXXXL: 60,
+    XXXXXXL: 96
   }
-};
+}
