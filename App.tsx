@@ -1,10 +1,15 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useFonts } from 'expo-font';
+import { ThemeProvider } from 'styled-components/native';
 import * as SplashScreen from 'expo-splash-screen';
 
 SplashScreen.preventAutoHideAsync();
+
+import theme from './src/theme';
+
+import Onboarding from './src/features/onboarding';
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
@@ -25,17 +30,12 @@ export default function App() {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <ThemeProvider theme={theme}>
+        <Onboarding />
+        <StatusBar style="auto" />
+      </ThemeProvider>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const styles = StyleSheet.create({ container: { flex: 1, backgroundColor: '#17171A' } });
