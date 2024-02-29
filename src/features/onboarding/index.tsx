@@ -1,2 +1,2 @@
-export * from './Onboarding'
-export { default } from './Onboarding'
+export * from './OnboardingScreen'
+export { default } from './OnboardingScreen'

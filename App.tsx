@@ -5,8 +5,7 @@ import { ThemeProvider } from 'styled-components/native'
 import * as SplashScreen from 'expo-splash-screen'
 
 import theme from './src/theme'
-
-import Onboarding from './src/features/onboarding'
+import { Routes } from './src/routes'
 
 // eslint-disable-next-line @typescript-eslint/no-floating-promises
 SplashScreen.preventAutoHideAsync()
@@ -35,7 +34,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Onboarding />
+      <Routes />
       <StatusBar style="light" />
     </ThemeProvider>
   )

@@ -10,6 +10,9 @@
       "@components/*": [
         "./src/shared/components/*"
       ],
+      "@features/*": [
+        "./src/features/*"
+      ],
       "@utils/*": [
         "./src/shared/utils/*"
       ],

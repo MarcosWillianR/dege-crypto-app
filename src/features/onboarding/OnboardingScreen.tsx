@@ -8,6 +8,9 @@ import {
   type NativeScrollEvent
 } from 'react-native'
 import { useTheme } from 'styled-components/native'
+import { useNavigation } from '@react-navigation/native'
+
+import { type AuthScreenProps } from '@routes/auth.routes'
 
 import triangleImg from '@assets/onboarding_img/triangle.png'
 import safeShieldImg from '@assets/onboarding_img/safe-shield.png'
@@ -33,8 +36,9 @@ const ONBOARDING_DATA = [
   { title: 'Convenient Transaction', image: paperPlaneImg }
 ]
 
-export default function Onboarding() {
+export default function OnboardingScreen() {
   const [activeIndex, setActiveIndex] = React.useState(0)
+  const navigation = useNavigation<AuthScreenProps>()
   const scrollViewRef = React.useRef<ScrollView>(null)
   const { COLORS } = useTheme()
 
@@ -112,7 +116,14 @@ export default function Onboarding() {
             ))}
           </OnboardingCurrentItemContent>
 
-          <Button>Get Start</Button>
+          <Button
+            type="secondary"
+            onPress={() => {
+              navigation.navigate('walletsetup')
+            }}
+          >
+            Get Start
+          </Button>
         </OnboardingFooter>
       </Container>
     </SafeAreaView>

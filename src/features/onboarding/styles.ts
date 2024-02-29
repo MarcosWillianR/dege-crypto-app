@@ -40,5 +40,5 @@ export const OnboardingCurrentItemDot = styled(View)<OnboardingCurrentItemDotPro
 `
 
 export const OnboardingFooter = styled(View)`
-  padding: 42px 40px;
+  padding: 42px 24px;
 `
