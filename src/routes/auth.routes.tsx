@@ -5,10 +5,12 @@ import {
 
 import OnboardingScreen from '@features/onboarding'
 import WalletSetupScreen from '@features/wallet-setup'
+import ImportFromSeedScreen from '@features/wallet-setup/import-from-seed'
 
 type AuthRoutesProps = {
   onboarding: undefined
   walletsetup: undefined
+  importfromseed: undefined
 }
 
 export type AuthScreenProps = NativeStackNavigationProp<AuthRoutesProps>
@@ -20,6 +22,7 @@ export function AuthRoutes() {
     <Navigator screenOptions={{ headerShown: false }}>
       <Screen name="onboarding" component={OnboardingScreen} />
       <Screen name="walletsetup" component={WalletSetupScreen} />
+      <Screen name="importfromseed" component={ImportFromSeedScreen} />
     </Navigator>
   )
 }
