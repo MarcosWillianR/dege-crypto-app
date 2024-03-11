@@ -1,6 +1,8 @@
 import { View, Dimensions } from 'react-native'
 import styled from 'styled-components/native'
 
+import { horizontalScale, verticalScale } from '@utils/metrics'
+
 const { width } = Dimensions.get('window')
 
 interface OnboardingCurrentItemDotProps {
@@ -19,17 +21,17 @@ export const OnboardingItemContent = styled(View)`
 `
 
 export const ImageContainer = styled(View)`
-  width: 300px;
-  height: 300px; 
-  margin-bottom: 24px;
+  width: ${horizontalScale(300)}px;
+  height: ${verticalScale(300)}px; 
+  margin-bottom: ${verticalScale(24)}px;
 `
 
 export const OnboardingCurrentItemContent = styled(View)`
-  padding: 8px 16px;
+  padding: ${verticalScale(8)}px ${horizontalScale(16)}px;
   gap: 4px;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: ${verticalScale(16)}px;
 `
 
 export const OnboardingCurrentItemDot = styled(View)<OnboardingCurrentItemDotProps>`
@@ -40,5 +42,5 @@ export const OnboardingCurrentItemDot = styled(View)<OnboardingCurrentItemDotPro
 `
 
 export const OnboardingFooter = styled(View)`
-  padding: 42px 24px;
+  padding: ${verticalScale(42)}px ${horizontalScale(24)}px;
 `

@@ -3,6 +3,8 @@ import { Text, type TextProps } from 'react-native'
 import { useTheme } from 'styled-components/native'
 import MaskedView from '@react-native-masked-view/masked-view'
 
+import { moderateScale } from '@utils/metrics'
+
 type size =
   | 'XS'
   | 'SM'
@@ -28,7 +30,7 @@ export default function TextGradient({
 }: TextGradientProps) {
   const { FONT_SIZE } = useTheme()
 
-  const fontSize = FONT_SIZE[size]
+  const fontSize = moderateScale(FONT_SIZE[size])
 
   return (
     <MaskedView
