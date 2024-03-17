@@ -13,6 +13,7 @@ export const HeaderArrowButton = styled(Pressable)`
   padding: ${verticalScale(42)}px ${horizontalScale(24)}px;
 `
 
+// margin-right: (paddingHorizontal * 2) + IconSize
 export const HeaderTitle = styled(Text)`
   flex: 1;
   text-align: center;

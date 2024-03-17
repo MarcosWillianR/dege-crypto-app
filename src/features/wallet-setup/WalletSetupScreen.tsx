@@ -33,13 +33,19 @@ export default function WalletSetupScreen() {
           <ButtonGroup>
             <Button
               onPress={() => {
-                navigation.navigate('importfromseed')
+                navigation.navigate('importFromSeed')
               }}
               type="secondary"
             >
               Import Using Seed Phrase
             </Button>
-            <Button>Create a New Wallet</Button>
+            <Button
+              onPress={() => {
+                navigation.navigate('createNewWallet')
+              }}
+            >
+              Create a New Wallet
+            </Button>
           </ButtonGroup>
         </WalletSetupFooter>
       </Container>

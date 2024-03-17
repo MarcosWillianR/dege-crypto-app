@@ -5,7 +5,7 @@ import { Container, ButtonText } from './styles'
 interface ButtonProps extends PressableProps {
   children: React.ReactNode
   type?: 'primary' | 'secondary'
-  disabled: boolean
+  disabled?: boolean
 }
 
 export default function Button({

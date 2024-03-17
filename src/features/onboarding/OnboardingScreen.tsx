@@ -119,7 +119,7 @@ export default function OnboardingScreen() {
           <Button
             type="secondary"
             onPress={() => {
-              navigation.navigate('walletsetup')
+              navigation.navigate('walletSetup')
             }}
           >
             Get Start

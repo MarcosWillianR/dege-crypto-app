@@ -6,11 +6,13 @@ import {
 import OnboardingScreen from '@features/onboarding'
 import WalletSetupScreen from '@features/wallet-setup'
 import ImportFromSeedScreen from '@features/wallet-setup/import-from-seed'
+import CreateNewWalletScreen from '@features/wallet-setup/create-new-wallet'
 
 type AuthRoutesProps = {
   onboarding: undefined
-  walletsetup: undefined
-  importfromseed: undefined
+  walletSetup: undefined
+  importFromSeed: undefined
+  createNewWallet: undefined
 }
 
 export type AuthScreenProps = NativeStackNavigationProp<AuthRoutesProps>
@@ -21,8 +23,9 @@ export function AuthRoutes() {
   return (
     <Navigator screenOptions={{ headerShown: false }}>
       <Screen name="onboarding" component={OnboardingScreen} />
-      <Screen name="walletsetup" component={WalletSetupScreen} />
-      <Screen name="importfromseed" component={ImportFromSeedScreen} />
+      <Screen name="walletSetup" component={WalletSetupScreen} />
+      <Screen name="importFromSeed" component={ImportFromSeedScreen} />
+      <Screen name="createNewWallet" component={CreateNewWalletScreen} />
     </Navigator>
   )
 }
